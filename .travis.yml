@@ -15,9 +15,8 @@ before_install:
       sudo apt-get update;
     fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
-      brew uninstall xctool;
-      brew install xctool --HEAD;
-      brew install homebrew/versions/glfw3;
+      brew update;
+      brew install glfw3;
       brew install libusb;
     fi
 
@@ -42,7 +41,7 @@ script:
       make;
     fi
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then
-      sudo cmake -G "Unix Makefiles" -DBUILD_SHARED_LIBS=ON;
+      sudo cmake -DBUILD_SHARED_LIBS=ON;
       sudo make;
       sudo make install;
       cd ..;

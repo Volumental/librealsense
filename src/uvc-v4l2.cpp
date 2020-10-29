@@ -22,6 +22,7 @@
 #include <limits.h>
 #include <errno.h>
 #include <sys/stat.h>
+#include <sys/sysmacros.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
 #include <linux/usb/video.h>
